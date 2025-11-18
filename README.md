@@ -21,25 +21,26 @@ MVP – Front-end em desenvolvimento.
 A camada back-end, o data lake completo e o núcleo de IA serão implementados posteriormente.
 
 📁 Estrutura de Pastas
-/Atlas
-    /components
-        /dashboard
-            floatingassistant.jsx
-        quickstats.jsx
-        timelinereview.jsx
 
-    /entities
-        kpi.json
-        note.json
-        pomodorosession.json
-        project.json
-        task.json
+  /components
+    /dashboard
+      floatingassistant.jsx
+      quickstats.jsx
+      timelinereview.jsx
 
-    /pages
-        dashboard.jsx
+  /entities
+    kpi.json
+    note.json
+    pomodorosession.json
+    project.json
+    task.json
 
-    layout.js
-    README.md
+  /pages
+    dashboard.jsx
+    
+  layout.js
+  README.md
+  
 ⚙️ Como Executar o Projeto (React + JSON)
 
 Instalar dependências:
