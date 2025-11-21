@@ -12,8 +12,8 @@ Inserção no Ecossistema
 
 Dentro do ecossistema maior, o Atlas funciona como a peça que conecta execução, rotina e ritmo de trabalho ao ambiente cognitivo administrado pelo Cortéx e às capacidades de acesso e onboarding fornecidas pelo Noésis. Ele opera como a camada tática do usuário, enquanto os demais módulos estruturam as camadas estratégica e acadêmica. Para navegação entre projetos:
 
-🔗 Noésis: https://github.com/asdkjbdbj/noesis
-🔗 Cortéx: https://github.com/asdkjbdbj/cortex
+🔗 Noésis: https://github.com/JhonTheDev/noesis
+🔗 Cortéx: https://github.com/JhonTheDev/cortex
 
 🧩 Status do Projeto
 
