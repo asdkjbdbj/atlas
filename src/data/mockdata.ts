@@ -2,7 +2,7 @@
 export interface Project {
   id: number;
   name: string;
-  status: 'active' | 'inactive' | 'completed';
+  status: 'Ativo' | 'Inativo' | 'Concluído';
   color: string;
   progress: number;
   updated_date?: string;
@@ -12,9 +12,15 @@ export interface Task {
   id: number;
   name: string;
   priority: string;
-  status: 'pending' | 'completed' | 'in-progress';
+  status: 'Pendente' | 'Concluído' | 'Em andamento';
   scheduled_date?: string;
   due_date?: string;
+}
+
+export interface priorityLevels {
+  Alta: string;
+  Media: string;
+  Baixa: string;
 }
 
 export interface PomodoroSession {
@@ -37,7 +43,7 @@ export const mockProjects: Project[] = [
   {
     id: 1,
     name: 'Atlas - Noésis',
-    status: 'active',
+    status: 'Ativo',
     progress: 65,
     color: '#6366f1',
     updated_date: new Date().toISOString(),
@@ -45,7 +51,7 @@ export const mockProjects: Project[] = [
   {
     id: 2,
     name: 'Estudos de React',
-    status: 'active',
+    status: 'Ativo',
     progress: 40,
     color: '#8b5cf6',
     updated_date: new Date().toISOString(),
@@ -53,7 +59,7 @@ export const mockProjects: Project[] = [
   {
     id: 3,
     name: 'Projeto Pessoal',
-    status: 'active',
+    status: 'Ativo',
     progress: 80,
     color: '#ec4899',
     updated_date: new Date().toISOString(),
@@ -64,26 +70,26 @@ export const mockTasks: Task[] = [
   {
     id: 1,
     name: 'Revisar código no dashboard',
-    status: 'pending',
+    status: 'Pendente',
     scheduled_date: new Date().toISOString(),
     due_date: new Date().toISOString(),
-    priority: 'high',
+    priority: 'Alta',
   },
   {
     id: 2,
     name: 'Estudar React Query',
-    status: 'pending',
+    status: 'Pendente',
     scheduled_date: new Date().toISOString(),
     due_date: new Date(Date.now() + 86400000).toISOString(), // amanhã
-    priority: 'medium',
+    priority: 'Media',
   },
   {
     id: 3,
     name: 'Atualizar documentação',
-    status: 'pending',
+    status: 'Pendente',
     scheduled_date: new Date(Date.now() - 86400000).toISOString(), // ontem (atrasada)
     due_date: new Date(Date.now() - 86400000).toISOString(),
-    priority: 'low',
+    priority: 'Baixa',
   },
 ];
 

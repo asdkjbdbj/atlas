@@ -31,54 +31,54 @@ export default function Home() {
     {
       icon: Calendar,
       label: 'Projetos Ativos',
-      value: mockProjects.filter((p) => p.status === 'active').length,
+      value: mockProjects.filter((p) => p.status === 'Ativo').length,
       color: 'from-blue-500 to-cyan-500',
     },
   ];
 
   return (
     <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-violet-400 via-pink-400 to-violet-400 bg-clip-text text-transparent mb-4">
+      <div className="mb-12 text-flex">
+        <h1 className="mb-4 text-5xl font-bold text-transparent bg-gradient-to-r from-violet-400 via-pink-400 to-violet-400 bg-clip-text">
           Bem-vindo ao Atlas
         </h1>
         <p className="text-xl text-slate-400">{currentDate}</p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:scale-105 transition-transform"
+            className="p-6 transition-transform border bg-gradient-to-br from-white/10 to-white/5 border-white/10 rounded-2xl hover:scale-105"
           >
             <div
               className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4 shadow-lg`}
             >
               <stat.icon size={24} className="text-white" />
             </div>
-            <p className="text-sm text-slate-400 mb-2">{stat.label}</p>
+            <p className="mb-2 text-sm text-slate-400">{stat.label}</p>
             <p className="text-3xl font-bold text-white">{stat.value}</p>
           </div>
         ))}
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6">
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-white mb-6">Próximas Tarefas</h2>
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="p-8 border bg-gradient-to-br from-white/10 to-white/5 border-white/10 rounded-2xl">
+          <h2 className="mb-6 text-2xl font-bold text-white">Próximas Tarefas</h2>
           <div className="space-y-4">
             {mockTasks.slice(0, 3).map((task) => (
               <div
                 key={task.id}
-                className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-violet-500/30 transition-all"
+                className="p-4 transition-all border rounded-xl bg-white/5 border-white/10 hover:border-violet-500/30"
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-white font-medium mb-1">{task.name}</h3>
+                    <h3 className="mb-1 font-medium text-white">{task.name}</h3>
                     <p className="text-sm text-slate-400">Prioridade: {task.priority}</p>
                   </div>
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      task.status === 'pending'
+                      task.status === 'Pendente'
                         ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
                         : 'bg-green-500/20 text-green-400 border border-green-500/30'
                     }`}
@@ -91,8 +91,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-white mb-6">Progresso de Projetos</h2>
+        <div className="p-8 border bg-gradient-to-br from-white/10 to-white/5 border-white/10 rounded-2xl">
+          <h2 className="mb-6 text-2xl font-bold text-white">Progresso de Projetos</h2>
           <div className="space-y-6">
             {mockProjects.map((project) => (
               <div key={project.id}>
@@ -102,15 +102,15 @@ export default function Home() {
                       className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: project.color }}
                     />
-                    <span className="text-white font-medium">{project.name}</span>
+                    <span className="font-medium text-white">{project.name}</span>
                   </div>
                   <span className="text-sm font-medium text-slate-400">
                     {project.progress}%
                   </span>
                 </div>
-                <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                <div className="h-2 overflow-hidden rounded-full bg-white/10">
                   <div
-                    className="h-full rounded-full transition-all"
+                    className="h-full transition-all rounded-full"
                     style={{
                       width: `${project.progress}%`,
                       backgroundColor: project.color,
@@ -123,17 +123,17 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="backdrop-blur-xl bg-gradient-to-r from-violet-500/20 to-pink-500/20 border border-violet-500/30 rounded-2xl p-8 text-center">
-        <h2 className="text-2xl font-bold text-white mb-4">
+      <div className="p-8 text-center border bg-gradient-to-r from-violet-500/20 to-pink-500/20 border-violet-500/30 rounded-2xl">
+        <h2 className="mb-4 text-2xl font-bold text-white">
           Continue seu ótimo trabalho!
         </h2>
-        <p className="text-slate-300 mb-6">
+        <p className="mb-6 text-slate-300">
           Você está no caminho certo para alcançar suas metas de produtividade.
         </p>
-        <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 text-white font-medium hover:from-violet-500 hover:to-violet-400 transition-all shadow-lg shadow-violet-500/30">
+        <a href="/dashboard" className="inline-block px-6 py-3 font-medium text-white transition-all shadow-lg rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-500 hover:to-violet-400 shadow-violet-500/30">
           Ver Dashboard Completo
-        </button>
+        </a>
       </div>
-    </div>
-  );
-}
+        </div>
+      );
+    }

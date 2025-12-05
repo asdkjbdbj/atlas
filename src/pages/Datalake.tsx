@@ -47,7 +47,7 @@ export default function Datalake() {
         {dataStats.map((stat, index) => (
           <div
             key={index}
-            className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6"
+            className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6"
           >
             <div
               className={`w-12 h-12 rounded-xl bg-${stat.color}-500/20 border border-${stat.color}-500/30 flex items-center justify-center mb-4`}
@@ -61,7 +61,7 @@ export default function Datalake() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6">
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-white mb-4">Projetos</h2>
           <div className="space-y-3">
             {mockProjects.map((project) => (
@@ -102,7 +102,7 @@ export default function Datalake() {
           </div>
         </div>
 
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-white mb-4">Tarefas</h2>
           <div className="space-y-3">
             {mockTasks.map((task) => (
@@ -135,7 +135,7 @@ export default function Datalake() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6">
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-white mb-4">Sessões Pomodoro</h2>
           <div className="space-y-3">
             {mockPomodoroSessions.map((session) => (
@@ -174,7 +174,7 @@ export default function Datalake() {
           </div>
         </div>
 
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-white mb-4">KPIs de Performance</h2>
           <div className="space-y-4">
             <div className="p-5 rounded-xl bg-gradient-to-r from-violet-500/20 to-pink-500/20 border border-violet-500/30">
@@ -213,7 +213,7 @@ export default function Datalake() {
         </div>
       </div>
 
-      <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+      <div className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
         <h2 className="text-xl font-bold text-white mb-4">Dados Brutos (JSON)</h2>
         <div className="bg-slate-950/50 rounded-xl p-4 border border-white/10 overflow-auto max-h-96">
           <pre className="text-sm text-slate-300 font-mono">
@@ -224,3 +224,4 @@ export default function Datalake() {
     </div>
   );
 }
+

@@ -21,7 +21,7 @@ export default function Projects() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="backdrop-blur-xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 border border-violet-500/30 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-violet-500/20 to-pink-500/20 border border-violet-500/30 rounded-2xl p-6">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 rounded-xl bg-violet-500/30">
               <FolderKanban size={24} className="text-white" />
@@ -33,7 +33,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="backdrop-blur-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-2xl p-6">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 rounded-xl bg-green-500/30">
               <TrendingUp size={24} className="text-white" />
@@ -45,7 +45,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="backdrop-blur-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-2xl p-6">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-3 rounded-xl bg-blue-500/30">
               <Clock size={24} className="text-white" />
@@ -58,13 +58,13 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+      <div className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
         <h2 className="text-xl font-bold text-white mb-6">Projetos Ativos</h2>
         <div className="grid lg:grid-cols-2 gap-6">
           {mockProjects.map((project) => (
             <div
               key={project.id}
-              className="backdrop-blur-lg bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-white/10 rounded-xl p-6 hover:border-violet-500/30 transition-all group"
+              className=" bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-white/10 rounded-xl p-6 hover:border-violet-500/30 transition-all group"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -142,7 +142,7 @@ export default function Projects() {
       </div>
 
       {completedProjects.length > 0 && (
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+        <div className=" bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-white mb-6">Projetos Concluídos</h2>
           <div className="grid lg:grid-cols-3 gap-4">
             {completedProjects.map((project) => (
@@ -168,7 +168,7 @@ export default function Projects() {
         </div>
       )}
 
-      <div className="backdrop-blur-xl bg-gradient-to-r from-violet-500/20 to-pink-500/20 border border-violet-500/30 rounded-2xl p-8 text-center">
+      <div className=" bg-gradient-to-r from-violet-500/20 to-pink-500/20 border border-violet-500/30 rounded-2xl p-8 text-center">
         <h2 className="text-2xl font-bold text-white mb-4">Pronto para começar?</h2>
         <p className="text-slate-300 mb-6">
           Crie um novo projeto e comece a organizar suas tarefas agora mesmo.
@@ -180,3 +180,4 @@ export default function Projects() {
     </div>
   );
 }
+

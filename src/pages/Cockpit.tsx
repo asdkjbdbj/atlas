@@ -2,7 +2,7 @@ import { Activity, Clock, Target, Flame, Award, Calendar } from 'lucide-react';
 import { mockKPI, mockPomodoroSessions, mockTasks, mockProjects } from '../data/mockdata';
 
 export default function Cockpit() {
-  const completedTasks = mockTasks.filter((t) => t.status === 'completed').length;
+  const completedTasks = mockTasks.filter((t) => t.status === 'Concluído').length;
   const totalTasks = mockTasks.length;
   const taskCompletionRate = Math.round((completedTasks / totalTasks) * 100);
 
@@ -52,15 +52,15 @@ export default function Cockpit() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold text-white mb-2">Cockpit de Controle</h1>
+        <h1 className="mb-2 text-4xl font-bold text-white">Cockpit de Controle</h1>
         <p className="text-slate-400">Visão geral de suas métricas e performance</p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {metrics.map((metric, index) => (
           <div
             key={index}
-            className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-violet-500/30 transition-all"
+            className="p-6 transition-all border  bg-gradient-to-br from-white/10 to-white/5 border-white/10 rounded-2xl hover:border-violet-500/30"
           >
             <div className="flex items-start justify-between mb-4">
               <div
@@ -68,46 +68,46 @@ export default function Cockpit() {
               >
                 <metric.icon size={24} className={`text-${metric.color}-400`} />
               </div>
-              <span className="px-2 py-1 rounded-lg bg-green-500/20 text-green-400 text-xs font-medium border border-green-500/30">
+              <span className="px-2 py-1 text-xs font-medium text-green-400 border rounded-lg bg-green-500/20 border-green-500/30">
                 {metric.trend}
               </span>
             </div>
-            <p className="text-sm text-slate-400 mb-1">{metric.label}</p>
+            <p className="mb-1 text-sm text-slate-400">{metric.label}</p>
             <p className="text-3xl font-bold text-white">{metric.value}</p>
           </div>
         ))}
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6">
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="p-6 border  bg-gradient-to-br from-white/10 to-white/5 border-white/10 rounded-2xl">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-white">Foco Semanal</h2>
             <Calendar size={20} className="text-slate-400" />
           </div>
-          <div className="flex items-end justify-between gap-3 h-48">
+          <div className="flex items-end justify-between h-48 gap-3">
             {weekData.map((day, index) => (
               <div key={index} className="flex flex-col items-center flex-1 gap-2">
-                <div className="w-full flex flex-col items-center gap-1 flex-1 justify-end">
-                  <span className="text-xs text-slate-400 mb-1">
+                <div className="flex flex-col items-center justify-end flex-1 w-full gap-1">
+                  <span className="mb-1 text-xs text-slate-400">
                     {day.focus > 0 ? `${day.focus}m` : ''}
                   </span>
                   <div
-                    className="w-full rounded-t-lg bg-gradient-to-t from-violet-500 to-pink-500 transition-all hover:opacity-80"
+                    className="w-full transition-all rounded-t-lg bg-gradient-to-t from-violet-500 to-pink-500 hover:opacity-80"
                     style={{
                       height: day.focus > 0 ? `${(day.focus / maxFocus) * 100}%` : '4px',
                       minHeight: day.focus > 0 ? '20px' : '4px',
                     }}
                   />
                 </div>
-                <span className="text-xs text-slate-400 font-medium">{day.day}</span>
+                <span className="text-xs font-medium text-slate-400">{day.day}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
+        <div className="p-6 border  bg-gradient-to-br from-white/10 to-white/5 border-white/10 rounded-2xl">
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 rounded-xl bg-violet-500/20 border border-violet-500/30">
+            <div className="p-3 border rounded-xl bg-violet-500/20 border-violet-500/30">
               <Award size={24} className="text-violet-400" />
             </div>
             <div>
@@ -116,31 +116,31 @@ export default function Cockpit() {
             </div>
           </div>
           <div className="space-y-4">
-            <div className="p-4 rounded-xl bg-gradient-to-r from-violet-500/20 to-pink-500/20 border border-violet-500/30">
+            <div className="p-4 border rounded-xl bg-gradient-to-r from-violet-500/20 to-pink-500/20 border-violet-500/30">
               <div className="flex items-center gap-3">
                 <div className="text-3xl">🔥</div>
                 <div>
-                  <p className="text-white font-medium">Sequência de 7 dias</p>
+                  <p className="font-medium text-white">Sequência de 7 dias</p>
                   <p className="text-sm text-slate-400">Continue mantendo o ritmo</p>
                 </div>
               </div>
             </div>
-            <div className="p-4 rounded-xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30">
+            <div className="p-4 border rounded-xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-green-500/30">
               <div className="flex items-center gap-3">
                 <div className="text-3xl">🎯</div>
                 <div>
-                  <p className="text-white font-medium">Meta de Tarefas Atingida</p>
+                  <p className="font-medium text-white">Meta de Tarefas Atingida</p>
                   <p className="text-sm text-slate-400">
                     {mockKPI.tasks_completed} tarefas completadas
                   </p>
                 </div>
               </div>
             </div>
-            <div className="p-4 rounded-xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30">
+            <div className="p-4 border rounded-xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-blue-500/30">
               <div className="flex items-center gap-3">
                 <div className="text-3xl">⚡</div>
                 <div>
-                  <p className="text-white font-medium">Foco Máximo</p>
+                  <p className="font-medium text-white">Foco Máximo</p>
                   <p className="text-sm text-slate-400">
                     {mockPomodoroSessions.length} sessões completas
                   </p>
@@ -151,27 +151,27 @@ export default function Cockpit() {
         </div>
       </div>
 
-      <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
-        <h2 className="text-xl font-bold text-white mb-6">Distribuição de Tempo</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+      <div className="p-6 border  bg-gradient-to-br from-white/10 to-white/5 border-white/10 rounded-2xl">
+        <h2 className="mb-6 text-xl font-bold text-white">Distribuição de Tempo</h2>
+        <div className="grid gap-6 md:grid-cols-3">
           {mockProjects.map((project) => (
             <div
               key={project.id}
-              className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-violet-500/30 transition-all"
+              className="p-6 transition-all border rounded-xl bg-white/5 border-white/10 hover:border-violet-500/30"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg"
+                  className="flex items-center justify-center w-12 h-12 text-lg font-bold text-white rounded-xl"
                   style={{ backgroundColor: project.color }}
                 >
                   {project.progress}%
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-white font-medium">{project.name}</h3>
+                  <h3 className="font-medium text-white">{project.name}</h3>
                   <p className="text-sm text-slate-400">{project.status}</p>
                 </div>
               </div>
-              <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+              <div className="h-2 overflow-hidden rounded-full bg-white/10">
                 <div
                   className="h-full rounded-full"
                   style={{
@@ -187,3 +187,4 @@ export default function Cockpit() {
     </div>
   );
 }
+
